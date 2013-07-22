@@ -80,7 +80,7 @@ Meteor.Router.add({
 
 The route function's return value is one of:
 
-  - the template name as shown above: `'showPost`'
+  - a template name as shown above: `'showPost'`
   - a text sent as body in the response
   - an array `[status, text]`, for example `[404, "Sorry, not found"]`
   - an array `[status, header, text]`
