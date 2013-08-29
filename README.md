@@ -82,6 +82,16 @@ Meteor.Router.add({
 });
 ```
 
+The route function's return value is one of:
+
+  - a template name as shown above: `'showPost'`
+  - a text sent as body in the response
+  - an array `[status, text]`, for example `[404, "Sorry, not found"]`
+  - an array `[status, header, text]`
+  - `false` to indicate that the router should not end the response
+  - `undefined` to indicate that you ended the response, i. e. you called `this.response.end()` or you piped to the response.
+  
+
 ### Named Routes
 
 If you specify your route with simply a template name, then you'll set up a _named route_. So instead of calling `Meteor.Router.to('/news')`, you can call `Meteor.Router.to('news')` (`news` is the name of the route). Additionally, that named route sets up the following:
